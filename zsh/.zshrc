@@ -5,7 +5,6 @@ ZSH_THEME="robbyrussell"
 plugins=(git virtualenvwrapper)
 
 source $ZSH/oh-my-zsh.sh
-source $HOME/.cargo/env
 source $HOME/.zsh_export
 source $HOME/.zsh_alias
 
