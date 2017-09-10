@@ -7,7 +7,7 @@
     ck = checkout
     rb = rebase
     cm = commit -m
-    nb = "!sh -c 'git checkout -b $GIT_BRANCH_PREFIX/$0'"
+    nb = "!sh -c 'git checkout -b $GIT_BRANCH_PREFIX$0'"
     wip = commit -m "WIP"
     cz = "!git commit --amend --no-edit"
     ll = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)  %Creset' --abbrev-commit --decorate --numstat
