@@ -2,7 +2,7 @@ export ZSH=/Users/balthazarrouberol/.oh-my-zsh
 
 ZSH_THEME="robbyrussell"
 
-plugins=(git virtualenvwrapper)
+plugins=(git virtualenvwrapper colored-man-pages python zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_export
