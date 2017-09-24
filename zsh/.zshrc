@@ -1,5 +1,8 @@
 export ZSH=$HOME/.oh-my-zsh
 
+# needed to make colored-man-pages work
+export GROFF_NO_SGR=1
+
 ZSH_THEME="brouberol"
 ZSH_DIR=$HOME/.zsh
 
