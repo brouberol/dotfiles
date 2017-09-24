@@ -46,3 +46,5 @@
     default = current
 [help]
     autocorrect = 1
+[merge]
+    conflictStyle = diff3
