@@ -1,17 +1,18 @@
 export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="brouberol"
+ZSH_DIR=$HOME/.zsh
 
 plugins=(git virtualenvwrapper colored-man-pages python zsh-syntax-highlighting)
 
 # Import exports
-exports=$HOME/.zsh_export
+exports=$ZSH_DIR/export
 if [ -f $exports ]; then
     source $exports
 fi
 
 # Import aliases
-alias=$HOME/.zsh_alias
+alias=$ZSH_DIR/alias
 if [ -f $alias ]; then
     source $alias
 fi
