@@ -115,7 +115,6 @@ set wildmenu  " visual autocomplete for command menu
 set lazyredraw  " redraw screen only when it needs to (often leading to faster macro exec)
 set showmatch  " highlight matching [{()}]
 nnoremap <space> za  " fold/unfold mapping
-set colorcolumn=80        " highlight 80th column after 'textwidth'
 set mouse=a  " activate mouse interactions
 " use 'jk' to escape from a mode
 inoremap jk <ESC>
