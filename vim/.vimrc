@@ -32,6 +32,7 @@ Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'fatih/vim-go'
 
 " All of your Plugins must be added before the following line
