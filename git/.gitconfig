@@ -43,6 +43,9 @@
     # Interactive rebase with the given number of latest commits
     reb = "!r() { git rebase -i HEAD~$1; }; r"
 
+    # highlight the diff word-by-word, not line-by-line
+    wdiff = diff --color-words
+
 [core]
     editor = /usr/bin/vim
     whitespace = trailing-space,space-before-tab,cr-before-eol
