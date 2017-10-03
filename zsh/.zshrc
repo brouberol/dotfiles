@@ -14,12 +14,6 @@ if [ -f $exports ]; then
     source $exports
 fi
 
-# Import aliases
-alias=$ZSH_DIR/alias
-if [ -f $alias ]; then
-    source $alias
-fi
-
 export GIT_COMMITTER_EMAIL=$GIT_AUTHOR_EMAIL
 
 # User defined key bindings
@@ -33,3 +27,9 @@ function weather {
 
 
 source $ZSH/oh-my-zsh.sh
+
+# Import aliases
+alias=$ZSH_DIR/alias
+if [ -f $alias ]; then
+    source $alias
+fi
