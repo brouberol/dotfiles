@@ -5,7 +5,6 @@
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     ss = status -s
     ck = checkout
-    rb = rebase
     cm = commit -m
     nb = "!sh -c 'git checkout -b $GIT_BRANCH_PREFIX$0'"
     wip = commit -m "WIP"
@@ -41,7 +40,7 @@
     up = "!git update"
 
     # Interactive rebase with the given number of latest commits
-    reb = "!r() { git rebase -i HEAD~$1; }; r"
+    reb = "!r() { if [[ -n \"$1\" ]]; then git rebase -i HEAD~$1; else git rebase; fi; }; r"
 
     # highlight the diff word-by-word, not line-by-line
     wdiff = diff --color-words
