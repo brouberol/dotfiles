@@ -22,7 +22,7 @@ bindkey '[C' forward-word
 bindkey '[D' backward-word
 
 function weather {
-    curl wttr.in/${1:-lyon}
+    curl "wttr.in/${1:-lyon}?m"
 }
 
 
