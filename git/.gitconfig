@@ -77,5 +77,5 @@
     untracked = cyan
 [diff]
     algorithm = patience
-[rebase]
-	autoStash = true
+[pull]
+	rebase = true
