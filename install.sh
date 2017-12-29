@@ -13,11 +13,17 @@ fi
 mkdir -p ~/.zsh
 touch ~/.zsh/export
 touch ~/.zsh/alias
+
 install zsh/.zshrc ~/.zshrc
 install zsh/brouberol.zsh-theme ~/.oh-my-zsh/themes/brouberol.zsh-theme
+
+mkdir -p ~/.vim/colors
+install vim/colors/molokai.vim ~/.vim/colors/molokai.vim
 install vim/.vimrc ~/.vimrc
+
 install git/.gitconfig ~/.gitconfig
 install git/.tigrc ~/.tigrc
+
 install ptpython ~/.ptpython
 
 if [ "$(uname)" = Linux ]; then
