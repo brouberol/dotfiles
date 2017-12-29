@@ -33,3 +33,8 @@ alias=$ZSH_DIR/alias
 if [ -f $alias ]; then
     source $alias
 fi
+
+which nvim > /dev/null
+if [ $? -eq 0 ]; then
+    alias vim=nvim
+fi
