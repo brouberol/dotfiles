@@ -19,3 +19,8 @@ install vim/.vimrc ~/.vimrc
 install git/.gitconfig ~/.gitconfig
 install git/.tigrc ~/.tigrc
 install ptpython ~/.ptpython
+
+if [ "$(uname)" = Linux ]; then
+    mkdir -p ~/.config/terminator
+    install terminator/config ~/.config/terminator/config
+fi
