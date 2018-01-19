@@ -50,34 +50,41 @@
 [core]
     editor = /usr/bin/vim
     whitespace = trailing-space,space-before-tab,cr-before-eol
+
 [push]
     default = current
+
 [help]
     autocorrect = 1
+
 [merge]
     # include the original line in a conflict, along with ours/theirs
     conflictStyle = diff3
 
     # include summaries of merge commits in newly created merge commit msg
     log = true
+
 [apply]
     whitespace = fix
+
 [color]
     ui = auto
+
 [color "branch"]
     current = yellow reverse
     local = yellow
     remote = green
+
 [color "diff"]
     meta = yellow bold
     frag = magenta bold # line info
     old = red # deletions
     new = green # additions
+
 [color "status"]
     added = yellow
     changed = green
     untracked = cyan
+
 [diff]
     algorithm = patience
-[pull]
-	rebase = true
