@@ -38,3 +38,19 @@ which nvim > /dev/null
 if [ $? -eq 0 ]; then
     alias vim=nvim
 fi
+
+function bootstrap_ansible_role {
+    local role=$1
+    if [ "$role" = "" ]; then
+        echo "You must specify a role name"
+        return
+    fi
+    dirs=(tasks handlers vars)
+    for dir in $dirs; do
+        mkdir -p $role/$dir
+        touch $role/$dir/main.yml
+    done
+    mkdir -p $role/files
+    mkdir -p $role/templates
+    find $role
+}
