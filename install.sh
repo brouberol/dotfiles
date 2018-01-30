@@ -31,3 +31,5 @@ if [ "$(uname)" = Linux ]; then
     mkdir -p ~/.config/terminator
     install terminator/config ~/.config/terminator/config
 fi
+
+install tmux/.tmux.conf ~/.tmux.conf
