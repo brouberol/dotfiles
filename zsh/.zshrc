@@ -6,7 +6,7 @@ export GROFF_NO_SGR=1
 ZSH_THEME="brouberol"
 ZSH_DIR=$HOME/.zsh
 
-plugins=(git virtualenvwrapper colored-man-pages python zsh-syntax-highlighting vi-mode)
+plugins=(git virtualenvwrapper colored-man-pages python zsh-syntax-highlighting vi-mode kubectl pipenv)
 
 # Import exports
 exports=$ZSH_DIR/export
@@ -54,3 +54,6 @@ function bootstrap_ansible_role {
     mkdir -p $role/templates
     find $role
 }
+
+alias resource="source ~/.zshrc"
+alias ccat='pygmentize -g -O style=monokai'
