@@ -6,7 +6,7 @@ export GROFF_NO_SGR=1
 ZSH_THEME="brouberol"
 ZSH_DIR=$HOME/.zsh
 
-plugins=(git virtualenvwrapper colored-man-pages python zsh-syntax-highlighting vi-mode kubectl pipenv)
+plugins=(git virtualenvwrapper colored-man-pages python zsh-syntax-highlighting vi-mode pipenv)
 
 # Import exports
 exports=$ZSH_DIR/export
