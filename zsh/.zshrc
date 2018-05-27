@@ -57,3 +57,5 @@ function bootstrap_ansible_role {
 
 alias resource="source ~/.zshrc"
 alias ccat='pygmentize -g -O style=monokai'
+alias ip='ip --color'
+alias ipb='ip --color --brief'
