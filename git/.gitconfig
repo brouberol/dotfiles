@@ -31,8 +31,10 @@
     # Push the current branch to the remote "origin", and set it to track
     # the upstream branch
     publish = "!git push -u origin $(git branch-name)"
+    pub = "!git push -u origin $(git branch-name)"
 
     publishf = "!git publish --force-with-lease"
+    pubf = "!git publish --force-with-lease"
 
     # Delete the remote version of the current branch
     unpublish = "!git push origin :$(git branch-name)"
