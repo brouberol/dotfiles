@@ -33,3 +33,9 @@ if [ "$(uname)" = Linux ]; then
 fi
 
 install tmux/.tmux.conf ~/.tmux.conf
+
+if [ "$(uname)" = Darwin ]; then
+    mkdir -p ~/.config/karabiner/assets/complex_modifications
+    install karabiner/karabiner.json ~/.config/karabiner/karabiner.json
+    install karabiner/assets/complex_modifications/firefox.json ~/.config/karabiner/assets/complex_modifications/firefox.json
+fi
