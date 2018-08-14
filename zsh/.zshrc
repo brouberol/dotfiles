@@ -55,6 +55,12 @@ function bootstrap_ansible_role {
     find $role
 }
 
+# activate jump command
+which jump > /dev/null
+if [ $? -eq 0 ]; then
+    eval "$(jump shell)"
+fi
+
 alias resource="source ~/.zshrc"
 alias ccat='pygmentize -g -O style=monokai'
 alias ip='ip --color'
