@@ -6,6 +6,7 @@
     ss = status -s
     ck = checkout
     cm = commit -m
+    co = commit
     nb = "!sh -c 'git checkout -b $GIT_BRANCH_PREFIX$0'"
     wip = commit -m "WIP"
     cz = "!git commit --amend --no-edit"
