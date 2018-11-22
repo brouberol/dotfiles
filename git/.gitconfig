@@ -45,7 +45,7 @@
     up = "!git update"
 
     # Interactive rebase with the given number of latest commits
-    reb = "!r() { if [[ -n \"$1\" ]]; then git rebase -i HEAD~$1; else git rebase; fi; }; r"
+    reb = "!r() { re='^[0-9]+$'; if [[ \"$1\" =~ $re ]]; then git rebase -i HEAD~$1; else git rebase $@; fi; }; r"
 
     # highlight the diff word-by-word, not line-by-line
     wdiff = diff --color-words
