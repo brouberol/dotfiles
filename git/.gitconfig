@@ -2,7 +2,7 @@
     name = Balthazar Rouberol
 
 [alias]
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit
     ss = status -s
     ck = checkout
     cm = commit -m
@@ -10,7 +10,7 @@
     nb = "!sh -c 'git checkout -b $GIT_BRANCH_PREFIX$0'"
     wip = commit -m "WIP"
     cz = "!git commit --amend --no-edit"
-    ll = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)  %Creset' --abbrev-commit --decorate --numstat
+    ll = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)  %Creset' --abbrev-commit --decorate --numstat
 
     branch-name = "!git rev-parse --abbrev-ref HEAD"
     cleanup = "!git branch --merged | egrep  -v '\\*|master|prod|staging' | xargs -n 1 git branch -d"
@@ -94,3 +94,9 @@
 
 [include]
     path = ~/.gitconfig.local
+
+[url "ssh://gitea@git.maurice.fr:2222"]
+    insteadOf = https://git.maurice.fr
+
+[log]
+    date = auto:human
