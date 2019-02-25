@@ -56,7 +56,7 @@ function bootstrap_ansible_role {
 }
 
 # activate jump command
-which jump > /dev/null
+which jump 2>/dev/null
 if [ $? -eq 0 ]; then
     eval "$(jump shell)"
 fi
