@@ -41,7 +41,7 @@
     unpublish = "!git push origin :$(git branch-name)"
 
     # Pull new code on the current bramch
-    update = "!git pull origin $(git branch-name)"
+    update = "!git pull origin $(git branch-name) && git cleanup"
     up = "!git update"
 
     # Interactive rebase with the given number of latest commits
