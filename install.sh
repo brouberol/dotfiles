@@ -51,3 +51,4 @@ fi
 # lf
 mkdir -p ~/.config/lf
 install lf/lfrc ~/.config/lf/lfrc
+install lf/pv.sh ~/.config/lf/pv.sh

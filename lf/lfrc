@@ -1,4 +1,8 @@
 set color256 on
 set number on
+set shellopts '-eu'
+set previewer ~/.config/lf/pv.sh
 
+map i $~/.config/lf/pv.sh $f
+map gh cd ~
 map <esc> quit
