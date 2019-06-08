@@ -1,0 +1,4 @@
+set color256 on
+set number on
+
+map <esc> quit
