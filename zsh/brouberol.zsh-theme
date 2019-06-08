@@ -7,7 +7,7 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%})"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
 local ret_status="%(?:%{$fg_bold[green]%}λ :%{$fg_bold[red]%}λ )"
-PROMPT='${ret_status} %{$fg[yellow]%}%c%{$reset_color%}$(git_prompt_info)'
+PROMPT='${ret_status} %{$fg[yellow]%}%c%{$reset_color%}$(git_prompt_info) '
 
 if [ -e /usr/local/etc/zsh-kubectl-prompt/kubectl.zsh ]; then
     source /usr/local/etc/zsh-kubectl-prompt/kubectl.zsh
@@ -23,7 +23,7 @@ if [ -e /usr/local/etc/zsh-kubectl-prompt/kubectl.zsh ]; then
             k8s_color=green
         fi
         KUBECTX="%{$fg_bold[$k8s_color]%}⎈ ($ZSH_KUBECTL_PROMPT)%{$reset_color%}"
-        echo " $KUBECTX"
+        echo "$KUBECTX"
     }
     PROMPT+='$(k8s_prompt_info) '
 fi
