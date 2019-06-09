@@ -10,7 +10,7 @@ map <esc> quit
 # Always open text files with $EDITOR
 cmd open ${{
     case $(file --mime-type -b --dereference $f) in
-        text/*) $EDITOR $fx;;
-        *) for f in $fx; do xdg-open $f > /dev/null 2> /dev/null & done;;
+        text/*) $EDITOR "$f";;
+        *) for f in "$fx"; do xdg-open "$f" > /dev/null 2> /dev/null & done;;
     esac
 }}
