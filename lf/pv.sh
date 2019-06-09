@@ -4,7 +4,7 @@ filepath=$1
 
 if [ $# -eq 1 ]; then
     # executed when i is hit
-    bat --style=full --pager='less -RF' $filepath
+    bat --style=full --paging=always $filepath
 else
     filename=$(basename -- "$filepath")
     extension="${filename##*.}"
