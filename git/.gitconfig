@@ -11,6 +11,7 @@
     wip = commit -m "WIP"
     cz = "!git commit --amend --no-edit"
     ll = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)  %Creset' --abbrev-commit --decorate --numstat
+    pp = "!sh -c 'git pull && git push'"
 
     branch-name = "!git rev-parse --abbrev-ref HEAD"
     cleanup = "!git branch --merged | egrep  -v '\\*|master|prod|staging' | xargs -n 1 git branch -d"
@@ -49,6 +50,9 @@
 
     # highlight the diff word-by-word, not line-by-line
     wdiff = diff --color-words
+
+    # Fetch a remote branch and checkout to it
+    fck = "!f() { git fetch origin \"$1\"; git checkout \"$1\"; }; f"
 
 [core]
     editor = /usr/bin/vim
@@ -100,3 +104,5 @@
 
 [log]
     date = auto:human
+[rebase]
+	autoStash = true
