@@ -54,6 +54,12 @@
     # Fetch a remote branch and checkout to it
     fck = "!f() { git fetch origin \"$1\"; git checkout \"$1\"; }; f"
 
+    # Display the commits in the current branch not yet merged in the master branch
+    branch-lg = "!git lg $(git branch-name) --not master"
+
+    # Display what changed between the current branch and the master branch
+    branch-diff = "!git diff master $(git branch-name)"
+
 [core]
     editor = /usr/bin/vim
     whitespace = trailing-space,space-before-tab,cr-before-eol
