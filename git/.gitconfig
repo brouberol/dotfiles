@@ -112,3 +112,5 @@
     date = auto:human
 [rebase]
 	autoStash = true
+[tag]
+    sort = version:refname
