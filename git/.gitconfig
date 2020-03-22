@@ -116,3 +116,6 @@
 	autoStash = true
 [tag]
     sort = version:refname
+
+[init]
+	templatedir = ~/.git-templates
