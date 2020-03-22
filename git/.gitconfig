@@ -60,6 +60,8 @@
     # Display what changed between the current branch and the master branch
     branch-diff = "!git diff master $(git branch-name)"
 
+    lasttag = "! git tag | tail -n 1"
+
 [core]
     editor = /usr/bin/vim
     whitespace = trailing-space,space-before-tab,cr-before-eol
