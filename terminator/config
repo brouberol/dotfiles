@@ -1,9 +1,11 @@
 [global_config]
   borderless = True
+  custom_url_handler = gnome-open
   focus = mouse
-  title_font = Source Code Pro Medium 12
+  title_font = Fira Code Medium 12
   title_transmit_bg_color = "#af7a7b"
   title_use_system_font = False
+  use_custom_url_handler = True
   window_state = maximise
 [keybindings]
 [layouts]
@@ -18,11 +20,13 @@
 [profiles]
   [[default]]
     background_darkness = 0.92
-    cursor_color = "#aaaaaa"
-    font = Source Code Pro Medium 13
-    foreground_color = "#ffffff"
+    font = Fira Code Medium 12
     icon_bell = False
-    palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
     scrollback_lines = 1000
     show_titlebar = False
     use_system_font = False
+    background_color = "#0f1419"
+    cursor_color = "#f29718"
+    foreground_color = "#e6e1cf"
+    background_image = None
+    palette = "#000000:#ff3333:#b8cc52:#e7c547:#36a3d9:#f07178:#95e6cb:#ffffff:#323232:#ff6565:#eafe84:#fff779:#68d5ff:#ffa3aa:#c7fffd:#ffffff"
