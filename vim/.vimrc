@@ -27,13 +27,13 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'eapache/rainbow_parentheses.vim'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'chase/vim-ansible-yaml'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'fatih/vim-go'
+Bundle 'jistr/vim-nerdtree-tabs'
+Plugin 'itchyny/lightline.vim'
+Plugin 'jiangmiao/auto-pairs'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -102,7 +102,7 @@ au VimEnter * RainbowParenthesesLoadBraces
 
 " ---- colors ----
 syntax enable  " enable syntax highlighting
-colorscheme molokai
+colorscheme sonokai
 
 " ---- UI config ----
 set encoding=utf-8
@@ -123,7 +123,19 @@ inoremap jk <ESC>
 " ---- status bar ----
 set laststatus=2 " Always display the statusline in all windows
 set showtabline=2 " Always display the tabline, even if there is only one tab
-let g:airline_theme='wombat'
+set noshowmode  " Status will be shown in the lightline status bar
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
+
+
 " ---- spaces and tabs -----
 set tabstop=4  " number of visual spaces per tab
 set expandtab  " expand tabs into spaces
@@ -158,6 +170,11 @@ autocmd BufRead,BufNewFile *.j2 set filetype=jinja
 
 " ---- NerdTree ----
 let NERDTreeIgnore = ['\.pyc$']  " hide pyc files
+" Hit Ctrl-E to open the nerdtree tab
+nmap <C-e> :NERDTreeTabsToggle<CR>
+nmap <C-f> :NERDTreeFocusToggle<CR>
+" Close vim if the only tab remanining is nerdree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " ---- Pasting ----
 set pastetoggle=<F2>

@@ -22,6 +22,7 @@ install zsh/brouberol.zsh-theme ~/.oh-my-zsh/themes/brouberol.zsh-theme
 # vim
 mkdir -p ~/.vim/colors
 install vim/colors/molokai.vim ~/.vim/colors/molokai.vim
+install vim/colors/solokai.vim ~/.vim/colors/solokai.vim
 install vim/.vimrc ~/.vimrc
 
 # git
