@@ -16,24 +16,23 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " other plugins
-" Plugin 'Valloric/YouCompleteMe'
-Plugin 'kien/ctrlp.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'scrooloose/syntastic'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'tpope/vim-commentary'
+Bundle 'jistr/vim-nerdtree-tabs'
+Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'eapache/rainbow_parentheses.vim'
 Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Glench/Vim-Jinja2-Syntax'
-Plugin 'rking/ag.vim'
-Plugin 'tpope/vim-fugitive'
-Bundle 'jistr/vim-nerdtree-tabs'
 Plugin 'itchyny/lightline.vim'
 Plugin 'jiangmiao/auto-pairs'
-
+Plugin 'kien/ctrlp.vim'
+Plugin 'rking/ag.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fugitive'
+Plugin 'lifepillar/vim-mucomplete'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'psf/black'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -50,14 +49,6 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-" ---- ultisnips config ----
-let g:SuperTabDefaultCompletionType    = '<C-n>'
-let g:SuperTabCrMapping                = 0
-let g:UltiSnipsExpandTrigger           = '<tab>'
-let g:UltiSnipsJumpForwardTrigger      = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
-let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
 
 " ---- syntastic config ----
 set statusline+=%#warningmsg#
@@ -70,8 +61,15 @@ let g:syntastic_check_on_w = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_python_flake8_args='--ignore=E501'
 
-" ---- YouCompleteMe config ----
-let g:ycm_autoclose_preview_window_after_completion=1
+
+" ---- Vim-Mucomplete config ----
+set completeopt-=preview
+set completeopt+=longest,menuone,noinsert
+set shortmess+=c   " Shut off completion messages
+set belloff+=ctrlg " If Vim beeps during completion
+let g:jedi#popup_on_dot = 1  " It may be 1 as well
+let g:mucomplete#enable_auto_at_startup = 1
+
 
 " ---- rainbow parentheses config ----
 " The last color in the list will be the first to be used
@@ -115,7 +113,6 @@ filetype indent on  " load filetype-specific indentation rules (stored in indent
 set wildmenu  " visual autocomplete for command menu
 set lazyredraw  " redraw screen only when it needs to (often leading to faster macro exec)
 set showmatch  " highlight matching [{()}]
-nnoremap <space> za  " fold/unfold mapping
 set mouse=a  " activate mouse interactions
 " use 'jk' to escape from a mode
 inoremap jk <ESC>
@@ -158,6 +155,7 @@ set foldenable  " enable folding
 set foldlevelstart=10  " open most folds by default
 set foldnestmax=10  " 10 nested fold max
 set foldmethod=indent  " fold based on indent level
+nnoremap <space> za  " fold/unfold using the spacebar
 
 " ---- movement ----
 " move vertically by visual line
@@ -178,3 +176,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " ---- Pasting ----
 set pastetoggle=<F2>
+
+
+" ---- Black configuration ----
+let g:black_linelength = 94
+" Run black on save
+autocmd BufWritePre *.py execute ':Black'
