@@ -118,19 +118,35 @@ set showmatch  " highlight matching [{()}]
 set mouse=a  " activate mouse interactions
 " use 'jk' to escape from a mode
 inoremap jk <ESC>
+set wrap
 
 " ---- status bar ----
 set laststatus=2 " Always display the statusline in all windows
 set showtabline=2 " Always display the tabline, even if there is only one tab
 set noshowmode  " Status will be shown in the lightline status bar
+
+" function counting number of words in markdown files
+" Credit: https://gist.github.com/Integralist/00387caeb4d68bb0c0ef862c3de3459d
+function! UpdateWordCount()
+  let lnum = 1
+  let n = 0
+  while lnum <= line('$')
+    let n = n + len(split(getline(lnum)))
+    let lnum = lnum + 1
+  endwhile
+  let g:word_count = n . " words"
+  return &filetype ==# 'markdown' ? g:word_count : ''
+endfunction
+
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \             [ 'gitbranch', 'wordcount', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
+      \   'gitbranch': 'FugitiveHead',
+      \   'wordcount': 'UpdateWordCount',
       \ },
       \ }
 
