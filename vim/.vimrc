@@ -178,9 +178,6 @@ set foldmethod=indent  " fold based on indent level
 nnoremap <space> za  " fold/unfold using the spacebar
 
 " ---- movement ----
-" move vertically by visual line
-nnoremap j gj
-nnoremap k gk
 set backspace=indent,eol,start
 
 " enable all Python syntax highlighting features
