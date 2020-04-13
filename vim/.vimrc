@@ -35,6 +35,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'psf/black'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'Linfee/nerdtree-open'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
