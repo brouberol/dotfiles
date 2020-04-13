@@ -118,7 +118,8 @@ set showmatch  " highlight matching [{()}]
 set mouse=a  " activate mouse interactions
 " use 'jk' to escape from a mode
 inoremap jk <ESC>
-set wrap
+set wrap " wrap lines
+set linebreak  " Do no break words when wrapping
 
 " ---- status bar ----
 set laststatus=2 " Always display the statusline in all windows
