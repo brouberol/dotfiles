@@ -66,6 +66,7 @@
 [core]
     editor = /usr/bin/vim
     whitespace = trailing-space,space-before-tab,cr-before-eol
+    pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
 
 [push]
     default = current
@@ -104,6 +105,7 @@
 
 [diff]
     algorithm = patience
+	noprefix = true
 
 [include]
     path = ~/.gitconfig.local
@@ -120,3 +122,6 @@
 
 [init]
 	templatedir = ~/.git-templates
+
+[interactive]
+    diffFilter = delta --color-only
