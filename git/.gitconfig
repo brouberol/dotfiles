@@ -127,3 +127,9 @@
 
 [branch]
     sort = -commiterdate
+
+[includeIf "gitdir:~/dd/"]
+    path = ~/.gitconfig-dd
+
+[includeIf "gitdir:~/code/"]
+    path = ~/.gitconfig-perso
