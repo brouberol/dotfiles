@@ -2,19 +2,30 @@
     name = Balthazar Rouberol
 
 [alias]
+    # Short, readab;e git log
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+    # Show what files were impacted in the commit tree
+    ll = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)  %Creset' --abbrev-commit --decorate --numstat
+
     ss = status -s
     ck = checkout
     cm = commit -m
     co = commit
+
+    # Create a new branch with a default prefix
     nb = "!sh -c 'git checkout -b $GIT_BRANCH_PREFIX$0'"
+
     wip = commit -m "WIP"
     cz = "!git commit --amend --no-edit"
-    ll = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)  %Creset' --abbrev-commit --decorate --numstat
     pp = "!sh -c 'git pull && git push'"
+    branch-name = "!git rev-parse --abbrev-ref HEAD"
+
+    # Interactive git branch using fzf
     ick = "!sh -c 'git checkout $(git branch | fzf)'"
 
-    branch-name = "!git rev-parse --abbrev-ref HEAD"
+
+    # Delete stale branches
     cleanup = "!git branch --merged | egrep  -v '\\*|master|prod|staging' | xargs -n 1 git branch -d"
 
     # test if a branch can be merged, without actually committing
@@ -42,7 +53,7 @@
     # Delete the remote version of the current branch
     unpublish = "!git push origin :$(git branch-name)"
 
-    # Pull new code on the current bramch
+    # Pull new code on the current branch + cleanup
     update = "!git pull origin $(git branch-name) && git cleanup"
     up = "!git update"
 
@@ -61,14 +72,17 @@
     # Display what changed between the current branch and the master branch
     branch-diff = "!git diff master $(git branch-name)"
 
+    # Display the latest tag
     lasttag = "! git tag | tail -n 1"
 
 [core]
     editor = /usr/bin/vim
     whitespace = trailing-space,space-before-tab,cr-before-eol
+    # Use https://github.com/dandavison/delta as diff pager
     pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
 
 [push]
+    # Push on current branch by default if no branch is specified
     default = current
 
 [help]
@@ -82,6 +96,7 @@
     log = true
 
 [apply]
+    # remove trailing whitespaces
     whitespace = fix
 
 [color]
@@ -108,25 +123,33 @@
 	noprefix = true
 
 [log]
+    # format git log dates in an understandable fashion (2 days ago, etc)
     date = auto:human
 
 [rebase]
     autoStash = true
 
 [tag]
+    # Sort tags by ref name
     sort = version:refname
 
 [init]
+    # Use the default hooks when creating a new repo
     templatedir = ~/.git-templates
 
 [interactive]
+    # Use https://github.com/dandavison/delta when displaying an Interactive diff
+    # eg when doing git add -p
     diffFilter = delta --color-only
 
 [branch]
+    # Sort dates from the most recently updated to the least
     sort = -commiterdate
 
 [includeIf "gitdir:~/dd/"]
+    # Include work config when committing on a datadog project
     path = ~/.gitconfig-dd
 
 [includeIf "gitdir:~/code/"]
+    # Include personal config when working on a personal project
     path = ~/.gitconfig-perso
