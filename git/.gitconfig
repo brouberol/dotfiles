@@ -15,7 +15,7 @@
     ick = "!sh -c 'git checkout $(git branch | fzf)'"
 
     branch-name = "!git rev-parse --abbrev-ref HEAD"
-    cleanup = "!git branch --merged | egrep  -v '\\*|master|prod|staging' | xargs -r -n 1 git branch -d"
+    cleanup = "!git branch --merged | egrep  -v '\\*|master|prod|staging' | xargs -n 1 git branch -d"
 
     # test if a branch can be merged, without actually committing
     testmerge = merge --no-commit --no-ff
@@ -110,18 +110,17 @@
 [include]
     path = ~/.gitconfig.local
 
-[url "ssh://gitea@git.maurice.fr:2222"]
-    insteadOf = https://git.maurice.fr
-
 [log]
     date = auto:human
+
 [rebase]
-	autoStash = true
+    autoStash = true
+
 [tag]
     sort = version:refname
 
 [init]
-	templatedir = ~/.git-templates
+    templatedir = ~/.git-templates
 
 [interactive]
     diffFilter = delta --color-only
