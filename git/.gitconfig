@@ -107,9 +107,6 @@
     algorithm = patience
 	noprefix = true
 
-[include]
-    path = ~/.gitconfig.local
-
 [log]
     date = auto:human
 
