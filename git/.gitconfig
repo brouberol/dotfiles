@@ -120,7 +120,7 @@
 
 [diff]
     algorithm = patience
-	noprefix = true
+    noprefix = true
 
 [log]
     # format git log dates in an understandable fashion (2 days ago, etc)
