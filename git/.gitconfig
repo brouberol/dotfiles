@@ -125,3 +125,6 @@
 
 [interactive]
     diffFilter = delta --color-only
+
+[branch]
+    sort = -commiterdate
