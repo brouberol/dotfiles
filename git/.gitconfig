@@ -12,6 +12,7 @@
     cz = "!git commit --amend --no-edit"
     ll = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)  %Creset' --abbrev-commit --decorate --numstat
     pp = "!sh -c 'git pull && git push'"
+    ick = "!sh -c 'git checkout $(git branch | fzf)'"
 
     branch-name = "!git rev-parse --abbrev-ref HEAD"
     cleanup = "!git branch --merged | egrep  -v '\\*|master|prod|staging' | xargs -r -n 1 git branch -d"
