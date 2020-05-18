@@ -79,7 +79,7 @@
     editor = /usr/bin/vim
     whitespace = trailing-space,space-before-tab,cr-before-eol
     # Use https://github.com/dandavison/delta as diff pager
-    pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
+    pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended' --keep-plus-minus-markers
 
 [push]
     # Push on current branch by default if no branch is specified
@@ -120,7 +120,6 @@
 
 [diff]
     algorithm = patience
-    noprefix = true
 
 [log]
     # format git log dates in an understandable fashion (2 days ago, etc)
