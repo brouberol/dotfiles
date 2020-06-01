@@ -9,18 +9,12 @@ source $ZSH/oh-my-zsh.sh
 source $ZSH_DIR/export
 source $ZSH_DIR/alias
 
-which nvim > /dev/null
-if [ $? -eq 0 ]; then
-    alias vim=nvim
-fi
+# utility function to check if a binary exists
+# taken from https://www.arp242.net/zshrc.html
+_exists() { (( $+commands[$1] )) }
 
-
-# activate jump command
-which jump > /dev/null 2>/dev/null
-if [ $? -eq 0 ]; then
-    eval "$(jump shell)"
-fi
-
+_exists nvim && alias vim=nvim
+_exists jump && eval "$(jump shell)"
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
