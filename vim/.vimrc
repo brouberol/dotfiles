@@ -40,6 +40,8 @@ Plugin 'Linfee/nerdtree-open'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+" load filetype-specific plugin indentation rules
+" (respectively stored under ftplugin/<lang>.vim and indent/<lang>.vim)
 " To ignore plugin indent changes, instead use:
 " filetype plugin on
 
@@ -51,6 +53,27 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+" ---- UI config ----
+set encoding=utf-8
+set number  " show line numbers
+set showcmd  " show command in bottom bar
+set cursorline  " highlight current line
+hi CursorLine term=bold cterm=bold
+hi CursorLineNr   term=bold ctermfg=Yellow gui=bold guifg=Yellow
+set wildmenu  " visual autocomplete for command menu
+set lazyredraw  " redraw screen only when it needs to (often leading to faster macro exec)
+set showmatch  " highlight matching [{()}]
+set mouse=a  " activate mouse interactions
+set ignorecase
+inoremap jk <ESC>
+" use 'jk' to escape from a mode
+set wrap " wrap lines
+set linebreak  " Do no break words when wrapping
+
+" ---- colors ----
+syntax enable  " enable syntax highlighting
+colorscheme sonokai
 
 
 " ---- syntastic config ----
@@ -101,27 +124,6 @@ au VimEnter * RainbowParenthesesLoadRound
 au VimEnter * RainbowParenthesesLoadSquare
 au VimEnter * RainbowParenthesesLoadBraces
 
-" ---- colors ----
-syntax enable  " enable syntax highlighting
-colorscheme sonokai
-
-" ---- UI config ----
-set encoding=utf-8
-set number  " show line numbers
-set showcmd  " show command in bottom bar
-set cursorline  " highlight current line
-hi CursorLine term=bold cterm=bold
-hi CursorLineNr   term=bold ctermfg=Yellow gui=bold guifg=Yellow
-filetype indent on  " load filetype-specific indentation rules (stored in indent/<lang>.vim)
-set wildmenu  " visual autocomplete for command menu
-set lazyredraw  " redraw screen only when it needs to (often leading to faster macro exec)
-set showmatch  " highlight matching [{()}]
-set mouse=a  " activate mouse interactions
-" use 'jk' to escape from a mode
-inoremap jk <ESC>
-set wrap " wrap lines
-set linebreak  " Do no break words when wrapping
-
 " ---- status bar ----
 set laststatus=2 " Always display the statusline in all windows
 set showtabline=2 " Always display the tabline, even if there is only one tab
@@ -157,7 +159,7 @@ let g:lightline = {
 set tabstop=4  " number of visual spaces per tab
 set expandtab  " expand tabs into spaces
 set softtabstop=4  " number of spaces in tab when editing
-set autoindent  " indent when moving to the next line while writing code
+set autoindent  " copy the indentation from the previous line on a newline
 set shiftwidth=4 " when using the >> or << commands, shift lines by 4 spaces
 autocmd BufWritePre <buffer> :%s/\s\+$//e  " Remove trailing spaces at save
 set showmatch  " show the matching part of the pair for [] {} and ()
@@ -165,7 +167,6 @@ set showmatch  " show the matching part of the pair for [] {} and ()
 " ---- searching ----
 set incsearch  " search as characters are entered
 set hlsearch  " highlight matches
-set ignorecase
 set smartcase
 nnoremap / /\v
 let g:ag_working_path_mode="r"  " make ag search start from project root, not cwd
