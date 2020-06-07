@@ -147,7 +147,6 @@ set softtabstop=4  " number of spaces in tab when editing
 set autoindent  " copy the indentation from the previous line on a newline
 set shiftwidth=4 " when using the >> or << commands, shift lines by 4 spaces
 autocmd BufWritePre <buffer> :%s/\s\+$//e  " Remove trailing spaces at save
-set showmatch  " show the matching part of the pair for [] {} and ()
 
 " ---- searching ----
 set incsearch  " search as characters are entered
