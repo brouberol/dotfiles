@@ -192,3 +192,14 @@ let g:rustfmt_autosave = 1
 
 " ---- Tagbar ----
 nmap <F8> :TagbarToggle<CR>
+
+" ---- Split navigation ----
+set splitbelow  " Open horizontal split below
+set splitright  " Open vertical split on the right
+nnoremap <C-[> :split<CR>
+nnoremap <C-]> :vsplit<CR>
+" Easier navigation by short cicuiting the C-w into a single Ctrl
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-l> <C-w>l
+map <C-k> <C-w>k
