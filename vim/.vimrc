@@ -36,6 +36,8 @@ Plugin 'psf/black'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'Linfee/nerdtree-open'
+Plugin 'rust-lang/rust.vim'
+Plugin 'majutsushi/tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -183,3 +185,10 @@ set pastetoggle=<F2>
 let g:black_linelength = 94
 " Run black on save
 autocmd BufWritePre *.py execute ':Black'
+
+
+" ---- Rust configuration ----
+let g:rustfmt_autosave = 1
+
+" ---- Tagbar ----
+nmap <F8> :TagbarToggle<CR>
