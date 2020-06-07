@@ -99,23 +99,6 @@ let g:mucomplete#enable_auto_at_startup = 1
 
 " ---- rainbow parentheses config ----
 " The last color in the list will be the first to be used
-let g:rbpt_colorpairs = [
-    \ ['darkcyan',    'DarkOrchid3'],
-    \ ['brown',       'SeaGreen3'],
-    \ ['gray',        'firebrick3'],
-    \ ['magenta',     'SeaGreen3'],
-    \ ['cyan',        'DarkOrchid3'],
-    \ ['darkred',     'firebrick3'],
-    \ ['brown',       'RoyalBlue3'],
-    \ ['darkblue',    'DarkOrchid3'],
-    \ ['gray',        'firebrick3'],
-    \ ['red',         'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkmagenta', 'SeaGreen3'],
-    \ ['red',         'RoyalBlue3'],
-    \ ['green',       'RoyalBlue3'],
-    \ ['blue',        'DarkOrchid3'],
-    \ ]
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
 " always on
