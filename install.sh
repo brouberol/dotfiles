@@ -43,7 +43,6 @@ install tmux/.tmux.conf ~/.tmux.conf
 
 # Karabiner remappings for typematrix
 if [ "$(uname)" = Darwin ]; then
-    mkdir -p ~/.config/karabiner/assets/complex_modifications
     install karabiner/karabiner.json ~/.config/karabiner/karabiner.json
 fi
 
