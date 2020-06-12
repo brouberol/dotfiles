@@ -26,7 +26,7 @@
 
 
     # Delete stale branches
-    cleanup = "!git branch --merged | egrep  -v '\\*|master|prod|staging' | xargs -n 1 git branch -d"
+    cleanup = "!git branch --merged | egrep  -v '\\*|master|prod|staging' | xargs -r -n 1 git branch -d"
 
     # test if a branch can be merged, without actually committing
     testmerge = merge --no-commit --no-ff
