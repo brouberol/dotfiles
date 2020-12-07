@@ -8,6 +8,9 @@
     # Show what files were impacted in the commit tree
     ll = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)  %Creset' --abbrev-commit --decorate --numstat
 
+    # Print branch names and how long ago they were worked on
+    branches = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:yellow)%(refname:short)%(color:white)%09%(contents:subject)' refs/heads
+
     ss = status -s
     ck = checkout
     cm = commit -m
