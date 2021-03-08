@@ -79,6 +79,9 @@
     # Delete a branch once the associated PR was merged
     close-pr = "!f(){ git checkout master; git up; }; f"
 
+    # Rebase the current branch on the main one
+    reb-pr = "!f() { git checkout master; git up; git ck -; git reb -; }; f"
+
 [core]
     editor = /usr/bin/vim
     whitespace = trailing-space,space-before-tab,cr-before-eol
