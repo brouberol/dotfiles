@@ -76,6 +76,7 @@
     # Display the latest tag
     lasttag = "! git tag | tail -n 1"
 
+    # Delete a branch once the associated PR was merged
     close-pr = "!f(){ git checkout master; git up; }; f"
 
 [core]
