@@ -82,6 +82,12 @@
     # Rebase the current branch on the main one
     reb-pr = "!f() { git checkout master; git up; git ck -; git reb -; }; f"
 
+    # Open a pull request
+    pr = "!hub pull-request -pc"
+
+    # Create a fixup commit
+    fixup = "!f(){ git commit --fixup :/\"$1\"; }; f"
+
 [core]
     editor = /usr/bin/vim
     whitespace = trailing-space,space-before-tab,cr-before-eol
@@ -134,6 +140,7 @@
 
 [rebase]
     autoStash = true
+	autosquash = true
 
 [tag]
     # Sort tags by ref name
