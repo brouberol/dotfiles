@@ -28,7 +28,7 @@
     ick = "!sh -c 'git checkout $(git branch | fzf)'"
 
     # Delete stale branches
-    cleanup = "!git branch --merged | egrep  -v '\\*|master|prod|staging' | xargs -n 1 git branch -d"
+    cleanup = "!git branch --merged | egrep  -v '\\*|main|master|prod|staging' | xargs -n 1 git branch -d"
 
     # test if a branch can be merged, without actually committing
     testmerge = merge --no-commit --no-ff
@@ -61,6 +61,9 @@
     # Interactive rebase with the given number of latest commits
     reb = "!r() { re='^[0-9]+$'; if [[ \"$1\" =~ $re ]]; then git rebase -i HEAD~$1; else git rebase $@; fi; }; r"
 
+    # return the name of the "main" branch (either main or master)
+    mainbranch = "!f() { git for-each-ref --format '%(refname:short)' refs/heads/ | egrep \"main|master\"; }; f"
+
     # highlight the diff word-by-word, not line-by-line
     wdiff = diff --color-words
 
@@ -68,19 +71,19 @@
     fck = "!f() { git fetch origin \"$1\"; git checkout \"$1\"; }; f"
 
     # Display the commits in the current branch not yet merged in the master branch
-    branch-lg = "!git lg $(git branch-name) --not master"
+    branch-lg = "!git lg $(git branch-name) --not $(git mainbranch)"
 
     # Display what changed between the current branch and the master branch
-    branch-diff = "!git diff master $(git branch-name)"
+    branch-diff = "!git diff $(git mainbranch) $(git branch-name)"
 
     # Display the latest tag
     lasttag = "! git tag | tail -n 1"
 
     # Delete a branch once the associated PR was merged
-    close-pr = "!f(){ git checkout master; git up; }; f"
+    close-pr = "!f(){ git checkout $(git mainbranch);git up; }; f"
 
     # Rebase the current branch on the main one
-    reb-pr = "!f() { git checkout master; git up; git ck -; git reb -; }; f"
+    reb-pr = "!f() { git checkout $(git mainbranch); git up; git ck -; git reb -; }; f"
 
     # Open a pull request
     pr = "!hub pull-request -pc"
