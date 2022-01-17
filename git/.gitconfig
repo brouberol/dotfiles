@@ -92,10 +92,10 @@
     fixup = "!f(){ git commit --fixup :/\"$1\"; }; f"
 
 [core]
-    editor = /usr/bin/vim
+    editor = vim
     whitespace = trailing-space,space-before-tab,cr-before-eol
     # Use https://github.com/dandavison/delta as diff pager
-    pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended' --keep-plus-minus-markers
+    pager = delta --plus-style="normal #012800" --minus-style="normal #340001" --theme='Monokai Extended' --keep-plus-minus-markers
 
 [push]
     # Push on current branch by default if no branch is specified
