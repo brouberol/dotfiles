@@ -1,8 +1,8 @@
 [user]
-    name = Balthazar Rouberol
+	name = Balthazar Rouberol
 
 [alias]
-    # Short, readab;e git log
+    # Short, readable git log
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit
 
     # Show what files were impacted in the commit tree
@@ -111,6 +111,9 @@
     # include summaries of merge commits in newly created merge commit msg
     log = true
 
+    # See https://github.blog/2021-11-15-highlights-from-git-2-34/#a-new-default-merge-strategy
+    strategy = ort
+
 [apply]
     # remove trailing whitespaces
     whitespace = fix
@@ -169,3 +172,5 @@
 [includeIf "gitdir:~/code/"]
     # Include personal config when working on a personal project
     path = ~/.gitconfig-perso
+[fetch]
+	prune = true
