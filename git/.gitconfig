@@ -20,7 +20,8 @@
     nb = "!sh -c 'git checkout -b $GIT_BRANCH_PREFIX$0'"
 
     wip = commit -m "WIP"
-    cz = "!git commit --amend --no-edit"
+    cz = commit --amend --no-edit
+    edit = commit --amend --only
     pp = "!sh -c 'git pull && git push'"
     branch-name = "!git rev-parse --abbrev-ref HEAD"
 
