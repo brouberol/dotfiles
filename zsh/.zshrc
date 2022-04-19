@@ -3,7 +3,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="brouberol"
 ZSH_DIR=$HOME/.zsh
 
-plugins=(git virtualenvwrapper colored-man-pages python vi-mode fzf)
+plugins=(git colored-man-pages python vi-mode fzf direnv)
 source $ZSH/oh-my-zsh.sh
 
 source $ZSH_DIR/export
