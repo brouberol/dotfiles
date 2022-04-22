@@ -18,6 +18,7 @@ touch ~/.zsh/alias
 
 install zsh/.zshrc ~/.zshrc
 install zsh/brouberol.zsh-theme ~/.oh-my-zsh/themes/brouberol.zsh-theme
+install zsh/p10k.zsh ~/.p10k.zsh
 
 # vim
 install vim/colors ~/.vim/
