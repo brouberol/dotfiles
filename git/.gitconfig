@@ -166,9 +166,9 @@
     # Sort dates from the most recently updated to the least
     sort = -committerdate
 
-[includeIf "gitdir:~/dd/"]
-    # Include work config when committing on a datadog project
-    path = ~/.gitconfig-dd
+[includeIf "gitdir:~/work/"]
+    # Include work config when committing on a work project
+    path = ~/.gitconfig-work
 
 [includeIf "gitdir:~/code/"]
     # Include personal config when working on a personal project
