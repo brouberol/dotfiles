@@ -29,9 +29,6 @@ install vim/.vimrc ~/.vimrc
 install git/.gitconfig ~/.gitconfig
 install git/.tigrc ~/.tigrc
 
-# ptpython
-mkdir -p ~/.ptpyhon
-install ptpython/config.py ~/.ptpython/config.py
 
 # terminator
 if [ "$(uname)" = Linux ]; then
