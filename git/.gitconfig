@@ -174,4 +174,6 @@
     # Include personal config when working on a personal project
     path = ~/.gitconfig-perso
 [fetch]
-	prune = true
+    prune = true
+[pull]
+    rebase = true
