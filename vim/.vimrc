@@ -31,7 +31,6 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'lifepillar/vim-mucomplete'
-Plugin 'davidhalter/jedi-vim'
 Plugin 'psf/black'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
@@ -89,14 +88,6 @@ let g:syntastic_check_on_w = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_python_flake8_args='--ignore=E501'
 
-
-" ---- Vim-Mucomplete config ----
-set completeopt-=preview
-set completeopt+=longest,menuone,noinsert
-set shortmess+=c   " Shut off completion messages
-set belloff+=ctrlg " If Vim beeps during completion
-let g:jedi#popup_on_dot = 1  " It may be 1 as well
-let g:mucomplete#enable_auto_at_startup = 1
 
 
 " ---- rainbow parentheses config ----
@@ -175,22 +166,6 @@ nmap <C-e> :NERDTreeTabsToggle<CR>
 nmap <C-f> :NERDTreeFocusToggle<CR>
 " Close vim if the only tab remanining is nerdree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" ---- Pasting ----
-set pastetoggle=<F2>
-
-
-" ---- Black configuration ----
-let g:black_linelength = 94
-" Run black on save
-autocmd BufWritePre *.py execute ':Black'
-
-
-" ---- Rust configuration ----
-let g:rustfmt_autosave = 1
-
-" ---- Tagbar ----
-nmap <F8> :TagbarToggle<CR>
 
 " ---- Split navigation ----
 set splitbelow  " Open horizontal split below
