@@ -30,6 +30,10 @@ install git/.gitconfig ~/.gitconfig
 install git/.gitconfig-perso ~/.gitconfig-perso
 install git/.tigrc ~/.tigrc
 
+# iterm2
+if [ "$(uname)" = Darwin ]; then
+    install iterm2/com.googlecode.iterm2.plist ~/.com.googlecode.iterm2.plist
+fi
 
 # terminator
 if [ "$(uname)" = Linux ]; then
