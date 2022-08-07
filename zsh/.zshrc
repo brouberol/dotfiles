@@ -5,6 +5,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+if [ $(uname) = Linux ]; then
+    SHARE_DIR=/usr/share
+else
+    SHARE_DIR=/usr/local/share
+fi
+
 export ZSH=$HOME/.oh-my-zsh
 
 # ZSH_THEME="brouberol"
@@ -24,8 +30,8 @@ _exists() { (( $+commands[$1] )) }
 _exists nvim && alias vim=nvim
 _exists jump && eval "$(jump shell)"
 
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ${SHARE_DIR}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ${SHARE_DIR}/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 unfunction _exists
 
