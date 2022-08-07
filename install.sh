@@ -45,9 +45,11 @@ if [ "$(uname)" = Darwin ]; then
 fi
 
 # lf
-mkdir -p ~/.config/lf
-install lf/lfrc ~/.config/lf/lfrc
-install lf/pv.sh ~/.config/lf/pv.sh
+if [ "$(uname)"  = Linux ]; then
+    mkdir -p ~/.config/lf
+    install lf/lfrc ~/.config/lf/lfrc
+    install lf/pv.sh ~/.config/lf/pv.sh
+fi
 
 # general purpose
 install inputrc ~/.inputrc
