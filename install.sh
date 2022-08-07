@@ -27,6 +27,7 @@ install vim/.vimrc ~/.vimrc
 
 # git
 install git/.gitconfig ~/.gitconfig
+install git/.gitconfig-perso ~/.gitconfig-perso
 install git/.tigrc ~/.tigrc
 
 
