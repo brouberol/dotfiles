@@ -101,6 +101,7 @@
 [push]
     # Push on current branch by default if no branch is specified
     default = current
+	autoSetupRemote = true
 
 [help]
     autocorrect = 1
