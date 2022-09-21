@@ -29,7 +29,11 @@
     ick = "!sh -c 'git checkout $(git branch | fzf)'"
 
     # Delete stale branches
-    cleanup = "!git branch --merged | egrep  -v '\\*|main|master|prod|staging' | xargs -n 1 git branch -d"
+    cleanup-local-merged = "!git branch --merged | egrep  -v '\\*|main|master|prod|staging' | xargs -n 1 git branch -d"
+
+    cleanup-local-squashed-and-merged = "!git-cleanup-local-squashed-and-merged"
+
+    cleanup = "!git cleanup-local-merged && git cleanup-local-squashed-and-merged"
 
     # test if a branch can be merged, without actually committing
     testmerge = merge --no-commit --no-ff
