@@ -16,24 +16,12 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " other plugins
-Bundle 'jistr/vim-nerdtree-tabs'
-Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'eapache/rainbow_parentheses.vim'
-Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'itchyny/lightline.vim'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
-Plugin 'lifepillar/vim-mucomplete'
-Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'Linfee/nerdtree-open'
-Plugin 'majutsushi/tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -72,18 +60,6 @@ set linebreak  " Do no break words when wrapping
 " ---- colors ----
 syntax enable  " enable syntax highlighting
 colorscheme sonokai
-
-
-" ---- syntastic config ----
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_check_on_w = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_python_flake8_args='--ignore=E501'
 
 
 
@@ -155,14 +131,6 @@ set backspace=indent,eol,start
 
 " enable all Python syntax highlighting features
 autocmd BufRead,BufNewFile *.j2 set filetype=jinja
-
-" ---- NerdTree ----
-let NERDTreeIgnore = ['\.pyc$']  " hide pyc files
-" Hit Ctrl-E to open the nerdtree tab
-nmap <C-e> :NERDTreeTabsToggle<CR>
-nmap <C-f> :NERDTreeFocusToggle<CR>
-" Close vim if the only tab remanining is nerdree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " ---- Split navigation ----
 set splitbelow  " Open horizontal split below
