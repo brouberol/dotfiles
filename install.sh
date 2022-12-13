@@ -62,3 +62,7 @@ install inputrc ~/.inputrc
 # ipython
 mkdir -p ~/.ipython/profile_default
 install ipython/profile_default/ipython_config.py  ~/.ipython/profile_default/ipython_config.py
+
+# pgcli
+mkdir -p ~/.config/pgcli
+install pgcli/config ~/.config/pgcli/config
