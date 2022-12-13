@@ -66,6 +66,12 @@
     # Interactive rebase with the given number of latest commits
     reb = "!r() { re='^[0-9]+$'; if [[ \"$1\" =~ $re ]]; then git rebase -i HEAD~$1; else git rebase $@; fi; }; r"
 
+    # find the parent branch of the current branch
+    parent-branch = "!git show-branch | grep '\\*' | grep -v $(git branch-name) | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\\^~].*//'"
+
+    # Interactive rebase of all commits in a feature branch
+    reb-all = "!git rebase -i $(git merge-base $(git parent-branch) HEAD)"
+
     # return the name of the "main" branch (either main or master)
     mainbranch = "!f() { git for-each-ref --format '%(refname:short)' refs/heads/ | egrep \"main|master\"; }; f"
 
@@ -88,10 +94,10 @@
     close-pr = "!f(){ git checkout $(git mainbranch);git up; }; f"
 
     # Rebase the current branch on the main one
-    reb-pr = "!f() { git checkout $(git mainbranch); git up; git ck -; git reb -; }; f"
+    reb-pr = "!f() { git checkout $(git mainbranch); git up; git switch -; git reb -; }; f"
 
     # Open a pull request
-    pr = "!hub pull-request -pc"
+    pr = "!gh pr create"
 
     # Create a fixup commit
     fixup = "!f(){ git commit --fixup :/\"$1\"; }; f"
