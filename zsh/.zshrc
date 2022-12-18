@@ -17,7 +17,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_DIR=$HOME/.zsh
 
-plugins=(git colored-man-pages python vi-mode fzf direnv poetry)
+plugins=(git colored-man-pages python vi-mode fzf direnv poetry pip)
 source $ZSH/oh-my-zsh.sh
 
 source $ZSH_DIR/export
