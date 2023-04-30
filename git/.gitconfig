@@ -167,6 +167,7 @@
 [init]
     # Use the default hooks when creating a new repo
     templatedir = ~/.git-templates
+	defaultBranch = main
 
 [interactive]
     # Use https://github.com/dandavison/delta when displaying an Interactive diff
