@@ -8,7 +8,7 @@ fi
 if [ $(uname) = Linux ]; then
     SHARE_DIR=/usr/share
 else
-    SHARE_DIR=/usr/local/share
+    SHARE_DIR=/opt/homebrew/share
 fi
 
 export ZSH=$HOME/.oh-my-zsh
