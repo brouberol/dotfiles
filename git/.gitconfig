@@ -1,5 +1,5 @@
 [user]
-	name = Balthazar Rouberol
+    name = Balthazar Rouberol
 
 [alias]
     # Short, readable git log
@@ -111,7 +111,7 @@
 [push]
     # Push on current branch by default if no branch is specified
     default = current
-	autoSetupRemote = true
+    autoSetupRemote = true
 
 [help]
     autocorrect = 1
@@ -157,8 +157,7 @@
     date = auto:human
 
 [rebase]
-    autoStash = true
-	autosquash = true
+    autosquash = true
 
 [tag]
     # Sort tags by ref name
@@ -167,7 +166,7 @@
 [init]
     # Use the default hooks when creating a new repo
     templatedir = ~/.git-templates
-	defaultBranch = main
+    defaultBranch = main
 
 [interactive]
     # Use https://github.com/dandavison/delta when displaying an Interactive diff
@@ -185,9 +184,11 @@
 [includeIf "gitdir:~/code/"]
     # Include personal config when working on a personal project
     path = ~/.gitconfig-perso
+
 [fetch]
     prune = true
+
 [pull]
     rebase = true
 [gpg "ssh"]
-	allowedSignersFile = ~/.ssh/allowed_signers
+    allowedSignersFile = ~/.ssh/allowed_signers
