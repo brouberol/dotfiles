@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SCRIPT_PATH=$(dirname $(realpath -s $0))
+SCRIPT_PATH=$(dirname $(grealpath -s $0))
 
 function install {
     ln -vsf $SCRIPT_PATH/$1 $2
