@@ -21,9 +21,10 @@ install zsh/brouberol.zsh-theme ~/.oh-my-zsh/themes/brouberol.zsh-theme
 install zsh/p10k.zsh ~/.p10k.zsh
 
 # vim
-install vim/colors ~/.vim/
-install vim/ftplugin ~/.vim/
-install vim/.vimrc ~/.vimrc
+mkdir -p ~/.config/nvim
+install vim/colors ~/.config/nvim/
+install vim/ftplugin ~/.config/nvim/
+install vim/.vimrc ~/.config/nvim/init.vim
 
 # git
 install git/.gitconfig ~/.gitconfig
