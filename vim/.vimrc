@@ -22,6 +22,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'rafi/awesome-vim-colorschemes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -59,7 +60,7 @@ set linebreak  " Do no break words when wrapping
 
 " ---- colors ----
 syntax enable  " enable syntax highlighting
-colorscheme sonokai
+colorscheme materialbox
 
 
 
