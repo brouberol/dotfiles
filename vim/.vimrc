@@ -27,19 +27,6 @@ Plugin 'rafi/awesome-vim-colorschemes'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" load filetype-specific plugin indentation rules
-" (respectively stored under ftplugin/<lang>.vim and indent/<lang>.vim)
-" To ignore plugin indent changes, instead use:
-" filetype plugin on
-
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
 " ---- UI config ----
 set encoding=utf-8
@@ -61,8 +48,6 @@ set linebreak  " Do no break words when wrapping
 " ---- colors ----
 syntax enable  " enable syntax highlighting
 colorscheme materialbox
-
-
 
 " ---- rainbow parentheses config ----
 " The last color in the list will be the first to be used
@@ -118,7 +103,6 @@ set incsearch  " search as characters are entered
 set hlsearch  " highlight matches
 set smartcase
 nnoremap / /\v
-let g:ag_working_path_mode="r"  " make ag search start from project root, not cwd
 
 " ---- folding ----
 set foldenable  " enable folding
