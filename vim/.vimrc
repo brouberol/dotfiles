@@ -78,7 +78,7 @@ function! UpdateWordCount()
 endfunction
 
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'powerline',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'wordcount', 'readonly', 'filename', 'modified' ] ]
