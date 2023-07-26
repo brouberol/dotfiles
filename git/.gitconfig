@@ -34,7 +34,7 @@
 
     cleanup-local-squashed-and-merged = "!git-cleanup-local-squashed-and-merged"
 
-    cleanup = "!git cleanup-local-merged && git cleanup-local-squashed-and-merged"
+    cleanup = "!git cleanup-local-merged;git cleanup-local-squashed-and-merged;git fetch --prune"
 
     # test if a branch can be merged, without actually committing
     testmerge = merge --no-commit --no-ff
